@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Tienda</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/EjemploDB.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" asp-area="" asp-page="/Index">Tienda</a>
+            <nav>
+                <a class="nav-link" asp-area="" asp-page="/Productos/Index">Productos</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="site-content">
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <span>&copy; 2026 Tienda</span>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

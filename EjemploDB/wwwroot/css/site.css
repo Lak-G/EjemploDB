@@ -1,0 +1,270 @@
+/* ─── Paleta análoga: azul-teal ─── */
+:root {
+    --c1: #1B3A5C;   /* azul oscuro */
+    --c2: #1E5F8C;   /* azul medio  */
+    --c3: #2196B8;   /* teal medio  */
+    --c4: #3ABDD4;   /* teal claro  */
+    --bg: #F4F8FA;
+    --surface: #FFFFFF;
+    --text: #1A2A35;
+    --text-muted: #6B8898;
+    --border: #D0E4ED;
+    --danger: #C0392B;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 15px;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ─── Header ─── */
+.site-header {
+    background: var(--c1);
+    padding: 0 2rem;
+    height: 56px;
+    display: flex;
+    align-items: center;
+}
+
+.header-inner {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.brand {
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: .03em;
+}
+
+.site-header nav { display: flex; gap: 1rem; }
+
+.site-header .nav-link {
+    color: var(--c4);
+    text-decoration: none;
+    font-size: .9rem;
+    padding: .25rem .5rem;
+    border-radius: 4px;
+    transition: background .15s;
+}
+
+.site-header .nav-link:hover { background: var(--c2); color: #fff; }
+
+/* ─── Content ─── */
+.site-content {
+    max-width: 900px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+/* ─── Footer ─── */
+.site-footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: .8rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    margin-top: 3rem;
+}
+
+/* ─── Lista de productos ─── */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.page-header h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--c1);
+}
+
+.empty-msg {
+    color: var(--text-muted);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.tabla-productos {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+}
+
+.tabla-productos thead {
+    background: var(--c2);
+    color: #fff;
+}
+
+.tabla-productos th {
+    padding: .7rem 1rem;
+    text-align: left;
+    font-weight: 500;
+    font-size: .88rem;
+    letter-spacing: .03em;
+}
+
+.tabla-productos td {
+    padding: .65rem 1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: .92rem;
+}
+
+.tabla-productos tbody tr:last-child td { border-bottom: none; }
+.tabla-productos tbody tr:hover { background: #EEF6FA; }
+
+.acciones { display: flex; gap: .5rem; }
+
+/* ─── Botones ─── */
+.btn-primary-action {
+    background: var(--c3);
+    color: #fff;
+    padding: .45rem 1.1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: .88rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background .15s;
+}
+.btn-primary-action:hover { background: var(--c2); }
+
+.btn-edit {
+    background: var(--c4);
+    color: var(--c1);
+    padding: .3rem .75rem;
+    border-radius: 4px;
+    font-size: .82rem;
+    text-decoration: none;
+    transition: background .15s;
+}
+.btn-edit:hover { background: var(--c3); color: #fff; }
+
+.btn-delete {
+    background: transparent;
+    color: var(--danger);
+    padding: .3rem .75rem;
+    border-radius: 4px;
+    font-size: .82rem;
+    text-decoration: none;
+    border: 1px solid var(--danger);
+    transition: background .15s, color .15s;
+}
+.btn-delete:hover { background: var(--danger); color: #fff; }
+
+.btn-delete-confirm {
+    background: var(--danger);
+    color: #fff;
+    padding: .45rem 1.1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: .88rem;
+    transition: opacity .15s;
+}
+.btn-delete-confirm:hover { opacity: .85; }
+
+.btn-cancel {
+    color: var(--text-muted);
+    font-size: .88rem;
+    text-decoration: none;
+    padding: .45rem .75rem;
+}
+.btn-cancel:hover { color: var(--text); }
+
+/* ─── Formulario ─── */
+.form-container {
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 460px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+}
+
+.form-container h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--c1);
+    margin-bottom: 1.5rem;
+    padding-bottom: .75rem;
+    border-bottom: 2px solid var(--c4);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    font-size: .85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.form-input {
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: .5rem .75rem;
+    font-size: .95rem;
+    color: var(--text);
+    background: var(--bg);
+    outline: none;
+    transition: border-color .15s;
+}
+.form-input:focus { border-color: var(--c3); background: #fff; }
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.validation-summary { color: var(--danger); font-size: .85rem; margin-bottom: .75rem; }
+.validation-msg { color: var(--danger); font-size: .8rem; }
+
+/* ─── Tarjeta detalle (delete) ─── */
+.delete-msg {
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    font-size: .92rem;
+}
+
+.detail-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: .4rem 0;
+    font-size: .92rem;
+    border-bottom: 1px solid var(--border);
+}
+.detail-row:last-child { border-bottom: none; }
+.detail-row span { color: var(--text-muted); }

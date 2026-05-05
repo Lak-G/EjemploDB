@@ -1,0 +1,23 @@
+@page "{id:int}"
+@model EjemploDB.Pages.Productos.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar Producto";
+}
+
+<div class="form-container">
+    <h2>Eliminar Producto</h2>
+    <p class="delete-msg">¿Seguro que deseas eliminar este producto?</p>
+
+    <div class="detail-card">
+        <div class="detail-row"><span>Nombre</span><strong>@Model.Producto.Nombre</strong></div>
+        <div class="detail-row"><span>Precio</span><strong>$@Model.Producto.Precio.ToString("0.00")</strong></div>
+        <div class="detail-row"><span>Cantidad</span><strong>@Model.Producto.Cantidad</strong></div>
+    </div>
+
+    <form method="post">
+        <div class="form-actions">
+            <button type="submit" class="btn-delete-confirm">Eliminar</button>
+            <a asp-page="Index" class="btn-cancel">Cancelar</a>
+        </div>
+    </form>
+</div>

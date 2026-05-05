@@ -1,0 +1,38 @@
+@page "{id:int}"
+@model EjemploDB.Pages.Productos.EditModel
+@{
+    ViewData["Title"] = "Editar Producto";
+}
+
+<div class="form-container">
+    <h2>Editar Producto</h2>
+    <form method="post">
+        <input type="hidden" asp-for="Producto.Id" />
+        <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+        <div class="form-group">
+            <label asp-for="Producto.Nombre">Nombre</label>
+            <input asp-for="Producto.Nombre" class="form-input" />
+            <span asp-validation-for="Producto.Nombre" class="validation-msg"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Producto.Precio">Precio</label>
+            <input asp-for="Producto.Precio" class="form-input" type="number" step="0.01" />
+            <span asp-validation-for="Producto.Precio" class="validation-msg"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Producto.Cantidad">Cantidad</label>
+            <input asp-for="Producto.Cantidad" class="form-input" type="number" />
+            <span asp-validation-for="Producto.Cantidad" class="validation-msg"></span>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary-action">Guardar</button>
+            <a asp-page="Index" class="btn-cancel">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

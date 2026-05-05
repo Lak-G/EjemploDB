@@ -1,0 +1,11 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Tienda";
+}
+
+<div style="text-align:center; padding: 3rem 0;">
+    <h1 style="font-size:2rem; color:var(--c1); margin-bottom:.75rem;">Tienda</h1>
+    <p style="color:var(--text-muted); margin-bottom:1.5rem;">Gestión de inventario de productos.</p>
+    <a asp-page="/Productos/Index" class="btn-primary-action">Ver Productos</a>
+</div>

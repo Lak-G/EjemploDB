@@ -1,0 +1,44 @@
+@page
+@model EjemploDB.Pages.Productos.IndexModel
+@{
+    ViewData["Title"] = "Productos";
+}
+
+<div class="page-header">
+    <h2>Productos</h2>
+    <a asp-page="Create" class="btn-primary-action">+ Nuevo</a>
+</div>
+
+@if (!Model.Productos.Any())
+{
+    <p class="empty-msg">No hay productos registrados.</p>
+}
+else
+{
+    <table class="tabla-productos">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model.Productos)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.Nombre</td>
+                    <td>$@p.Precio.ToString("0.00")</td>
+                    <td>@p.Cantidad</td>
+                    <td class="acciones">
+                        <a asp-page="Edit" asp-route-id="@p.Id" class="btn-edit">Editar</a>
+                        <a asp-page="Delete" asp-route-id="@p.Id" class="btn-delete">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
